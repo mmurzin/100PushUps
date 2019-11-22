@@ -1,0 +1,6 @@
+framework module Pods_HundredPushUps {
+  umbrella header "Pods-HundredPushUps-umbrella.h"
+
+  export *
+  module * { export * }
+}
