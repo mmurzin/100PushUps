@@ -11,6 +11,9 @@
 		97579E8D23867F7A00470CF7 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97579E8C23867F7A00470CF7 /* TodayViewController.swift */; };
 		97579E8F23867FC300470CF7 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97579E8E23867FC300470CF7 /* HistoryViewController.swift */; };
 		97579E9123867FF400470CF7 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97579E9023867FF400470CF7 /* InstructionsViewController.swift */; };
+		975A6D142387D61B0078AFCD /* ProgressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A6D132387D61B0078AFCD /* ProgressService.swift */; };
+		975A6D162387D6820078AFCD /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A6D152387D6820078AFCD /* ServiceLocator.swift */; };
+		975A6D182387DDE60078AFCD /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A6D172387DDE60078AFCD /* TestResult.swift */; };
 		975F99A423874BD600D626AA /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975F99A323874BD600D626AA /* TabsViewController.swift */; };
 		975F99A723874DB300D626AA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975F99A623874DB300D626AA /* TestViewController.swift */; };
 		97AF2C7C2385DDBD00B4C364 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF2C7B2385DDBD00B4C364 /* AppDelegate.swift */; };
@@ -50,6 +53,9 @@
 		97579E8C23867F7A00470CF7 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		97579E8E23867FC300470CF7 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		97579E9023867FF400470CF7 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		975A6D132387D61B0078AFCD /* ProgressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressService.swift; sourceTree = "<group>"; };
+		975A6D152387D6820078AFCD /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		975A6D172387DDE60078AFCD /* TestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
 		975F99A323874BD600D626AA /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		975F99A623874DB300D626AA /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		97AF2C782385DDBD00B4C364 /* HundredPushUps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HundredPushUps.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +118,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		975A6D122387D5BD0078AFCD /* services */ = {
+			isa = PBXGroup;
+			children = (
+				975A6D132387D61B0078AFCD /* ProgressService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
 		975F99A02387494400D626AA /* today */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				975F99A623874DB300D626AA /* TestViewController.swift */,
+				975A6D172387DDE60078AFCD /* TestResult.swift */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -169,6 +184,7 @@
 		97AF2C7A2385DDBD00B4C364 /* HundredPushUps */ = {
 			isa = PBXGroup;
 			children = (
+				975A6D122387D5BD0078AFCD /* services */,
 				975F99A523874DA300D626AA /* test */,
 				975F99A22387498C00D626AA /* instructions */,
 				975F99A12387495A00D626AA /* history */,
@@ -180,6 +196,7 @@
 				97AF2C862385DDBF00B4C364 /* LaunchScreen.storyboard */,
 				97AF2C892385DDBF00B4C364 /* Info.plist */,
 				975F99A323874BD600D626AA /* TabsViewController.swift */,
+				975A6D152387D6820078AFCD /* ServiceLocator.swift */,
 			);
 			path = HundredPushUps;
 			sourceTree = "<group>";
@@ -451,12 +468,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				975A6D182387DDE60078AFCD /* TestResult.swift in Sources */,
+				975A6D162387D6820078AFCD /* ServiceLocator.swift in Sources */,
 				975F99A723874DB300D626AA /* TestViewController.swift in Sources */,
 				97AF2C7C2385DDBD00B4C364 /* AppDelegate.swift in Sources */,
 				97AF2C7E2385DDBD00B4C364 /* SceneDelegate.swift in Sources */,
 				975F99A423874BD600D626AA /* TabsViewController.swift in Sources */,
 				97579E8D23867F7A00470CF7 /* TodayViewController.swift in Sources */,
 				97579E8F23867FC300470CF7 /* HistoryViewController.swift in Sources */,
+				975A6D142387D61B0078AFCD /* ProgressService.swift in Sources */,
 				97579E9123867FF400470CF7 /* InstructionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,6 +17,15 @@ class TestViewController: UIViewController {
     }
     @IBAction func submitClicked(_ sender: Any) {
         let pushUpsCount = Int(valueSlider.value)
+        guard let progressService: ProgressService = ServiceLocator.shared.getService() else {
+            print("progressService = nil error")
+            return
+        }
+        progressService.savePushUpsCount(pushUpsCount)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController (withIdentifier: "TabsViewController")
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
