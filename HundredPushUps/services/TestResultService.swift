@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 
-class ProgressService {
+class TestResultService {
     private let realm = try! Realm()
     var testResult: TestResult?
     
@@ -37,6 +37,8 @@ class ProgressService {
             }
         }
         
+        let trainingService: TrainingServices? = ServiceLocator.shared.getService()
+        trainingService?.setInitPushUps(count)
     }
     
     private func getTestResults() -> TestResult?{

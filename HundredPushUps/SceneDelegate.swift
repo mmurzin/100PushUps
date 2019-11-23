@@ -18,10 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         ServiceLocator.initializeServices()
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        guard let progressService: ProgressService = ServiceLocator.shared.getService() else { return }
+        guard let testResultService: TestResultService = ServiceLocator.shared.getService() else { return }
         var viewController: UIViewController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if(progressService.hasTestResult()){
+        if(testResultService.hasTestResult()){
             viewController = storyboard.instantiateViewController (withIdentifier: "TabsViewController")
         } else {
             viewController = storyboard.instantiateViewController (withIdentifier: "TestViewController")

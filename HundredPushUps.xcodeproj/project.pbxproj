@@ -11,11 +11,15 @@
 		97579E8D23867F7A00470CF7 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97579E8C23867F7A00470CF7 /* TodayViewController.swift */; };
 		97579E8F23867FC300470CF7 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97579E8E23867FC300470CF7 /* HistoryViewController.swift */; };
 		97579E9123867FF400470CF7 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97579E9023867FF400470CF7 /* InstructionsViewController.swift */; };
-		975A6D142387D61B0078AFCD /* ProgressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A6D132387D61B0078AFCD /* ProgressService.swift */; };
+		975A6D142387D61B0078AFCD /* TestResultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A6D132387D61B0078AFCD /* TestResultService.swift */; };
 		975A6D162387D6820078AFCD /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A6D152387D6820078AFCD /* ServiceLocator.swift */; };
 		975A6D182387DDE60078AFCD /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A6D172387DDE60078AFCD /* TestResult.swift */; };
 		975F99A423874BD600D626AA /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975F99A323874BD600D626AA /* TabsViewController.swift */; };
 		975F99A723874DB300D626AA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975F99A623874DB300D626AA /* TestViewController.swift */; };
+		9760025E2389196F00B95605 /* TrainingProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9760025D2389196F00B95605 /* TrainingProgress.swift */; };
+		976002602389202700B95605 /* Date-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9760025F2389202700B95605 /* Date-Extension.swift */; };
+		976358422388FDD200DB0102 /* TrainingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976358412388FDD200DB0102 /* TrainingServices.swift */; };
+		976358442389177000DB0102 /* TrainingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976358432389177000DB0102 /* TrainingItem.swift */; };
 		97AF2C7C2385DDBD00B4C364 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF2C7B2385DDBD00B4C364 /* AppDelegate.swift */; };
 		97AF2C7E2385DDBD00B4C364 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF2C7D2385DDBD00B4C364 /* SceneDelegate.swift */; };
 		97AF2C832385DDBD00B4C364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97AF2C812385DDBD00B4C364 /* Main.storyboard */; };
@@ -53,11 +57,15 @@
 		97579E8C23867F7A00470CF7 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		97579E8E23867FC300470CF7 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		97579E9023867FF400470CF7 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
-		975A6D132387D61B0078AFCD /* ProgressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressService.swift; sourceTree = "<group>"; };
+		975A6D132387D61B0078AFCD /* TestResultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultService.swift; sourceTree = "<group>"; };
 		975A6D152387D6820078AFCD /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		975A6D172387DDE60078AFCD /* TestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
 		975F99A323874BD600D626AA /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		975F99A623874DB300D626AA /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		9760025D2389196F00B95605 /* TrainingProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingProgress.swift; sourceTree = "<group>"; };
+		9760025F2389202700B95605 /* Date-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date-Extension.swift"; sourceTree = "<group>"; };
+		976358412388FDD200DB0102 /* TrainingServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingServices.swift; sourceTree = "<group>"; };
+		976358432389177000DB0102 /* TrainingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingItem.swift; sourceTree = "<group>"; };
 		97AF2C782385DDBD00B4C364 /* HundredPushUps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HundredPushUps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97AF2C7B2385DDBD00B4C364 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97AF2C7D2385DDBD00B4C364 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,7 +129,9 @@
 		975A6D122387D5BD0078AFCD /* services */ = {
 			isa = PBXGroup;
 			children = (
-				975A6D132387D61B0078AFCD /* ProgressService.swift */,
+				975A6D132387D61B0078AFCD /* TestResultService.swift */,
+				976358412388FDD200DB0102 /* TrainingServices.swift */,
+				9760025F2389202700B95605 /* Date-Extension.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -130,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				97579E8C23867F7A00470CF7 /* TodayViewController.swift */,
+				976358432389177000DB0102 /* TrainingItem.swift */,
+				9760025D2389196F00B95605 /* TrainingProgress.swift */,
 			);
 			path = today;
 			sourceTree = "<group>";
@@ -469,14 +481,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				975A6D182387DDE60078AFCD /* TestResult.swift in Sources */,
+				976358442389177000DB0102 /* TrainingItem.swift in Sources */,
 				975A6D162387D6820078AFCD /* ServiceLocator.swift in Sources */,
 				975F99A723874DB300D626AA /* TestViewController.swift in Sources */,
 				97AF2C7C2385DDBD00B4C364 /* AppDelegate.swift in Sources */,
 				97AF2C7E2385DDBD00B4C364 /* SceneDelegate.swift in Sources */,
+				9760025E2389196F00B95605 /* TrainingProgress.swift in Sources */,
+				976002602389202700B95605 /* Date-Extension.swift in Sources */,
 				975F99A423874BD600D626AA /* TabsViewController.swift in Sources */,
+				976358422388FDD200DB0102 /* TrainingServices.swift in Sources */,
 				97579E8D23867F7A00470CF7 /* TodayViewController.swift in Sources */,
 				97579E8F23867FC300470CF7 /* HistoryViewController.swift in Sources */,
-				975A6D142387D61B0078AFCD /* ProgressService.swift in Sources */,
+				975A6D142387D61B0078AFCD /* TestResultService.swift in Sources */,
 				97579E9123867FF400470CF7 /* InstructionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,13 +12,5 @@ class TodayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let asset = NSDataAsset(name: "GroupsJson") else {
-            fatalError("Missing data asset: GroupsJson")
-        }
-
-        let data = asset.data
-        print(data)
-        
     }
 }

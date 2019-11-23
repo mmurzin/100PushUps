@@ -6,8 +6,8 @@
   "data" : [
     {
       "idiom" : "universal",
-      "filename" : "groups",
-      "universal-type-identifier" : "public.data"
+      "filename" : "trainings.json",
+      "universal-type-identifier" : "public.json"
     }
   ]
 }
