@@ -17,6 +17,7 @@ class TodayViewController: UIViewController, UITableViewDelegate  {
     @IBAction func trainingCompleted(_ sender: Any) {
         viewModel.saveProgress(self.exercises)
         if viewModel.isStageCompleted() {
+            viewModel.removeProgress()
             openTestDisplay()
         } else {
             loadTodayTraining()

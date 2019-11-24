@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,27 +12,131 @@
             <objects>
                 <viewController id="HBQ-VR-px7" customClass="HistoryViewController" customModule="HundredPushUps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gYp-mq-HP1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U95-mr-e95">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyTrainingCell" textLabel="Olb-yd-rne" detailTextLabel="0rW-0o-4vp" style="IBUITableViewCellStyleSubtitle" id="eYj-0w-96F">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eYj-0w-96F" id="uxz-rk-05u">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Olb-yd-rne">
+                                                    <rect key="frame" x="15" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0rW-0o-4vp">
+                                                    <rect key="frame" x="15" y="31.5" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="HBQ-VR-px7" id="UOy-8J-eb1"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="U95-mr-e95" firstAttribute="top" secondItem="Z7i-yL-YrH" secondAttribute="top" id="65I-Jk-WLJ"/>
+                            <constraint firstItem="U95-mr-e95" firstAttribute="leading" secondItem="Z7i-yL-YrH" secondAttribute="leading" id="Jnp-kY-jlt"/>
+                            <constraint firstItem="U95-mr-e95" firstAttribute="bottom" secondItem="Z7i-yL-YrH" secondAttribute="bottom" id="UxQ-1n-FFt"/>
+                            <constraint firstItem="U95-mr-e95" firstAttribute="trailing" secondItem="Z7i-yL-YrH" secondAttribute="trailing" id="bJ6-WZ-lb3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Z7i-yL-YrH"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="История" image="HistoryItem" id="Geu-5N-IBM">
                         <inset key="imageInsets" minX="0.0" minY="72" maxX="0.0" maxY="72"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="tableView" destination="U95-mr-e95" id="aT3-9r-zfH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cw4-Rn-fGV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="532" y="-178"/>
+            <point key="canvasLocation" x="531.8840579710145" y="-178.53260869565219"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="Ahh-qT-hQh">
             <objects>
                 <viewController id="2Dn-5C-Voi" customClass="InstructionsViewController" customModule="HundredPushUps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k86-00-tja">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioE-6D-Df8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTQ-m4-KuK">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тренировка отжиманий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9w-Yz-KXV">
+                                                <rect key="frame" x="8" y="8" width="192" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhk-DC-YTI">
+                                                <rect key="frame" x="8" y="37" width="304" height="320"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="320" id="KZf-vo-98y"/>
+                                                </constraints>
+                                                <mutableString key="text">1) Лягте на живот
+2) Положите ладони плашмя на землю на высоте плеч, немного шире, чем ширина ваших плеч.
+3) Удерживайте тело в прямой позиции.
+4) Поднимите тело вверх, расправляя руки и удерживая тело в прямой позиции. Избегайте выгибания туловища назад.
+5) Тело должно опираться только на ладони и пальцы стоп, постоянно находясь в прямой позиции.
+6) Последующие отжимания выполняйте поднимая и опуская туловище путем сгибания и разгибания рук.
+7) Не ложитесь на землю между отжиманиями. От первого до последнего отжимания контактировать с полом должны только пальцы стоп и ладони.</mutableString>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m9w-Yz-KXV" secondAttribute="trailing" constant="20" symbolic="YES" id="F2L-ah-B44"/>
+                                            <constraint firstAttribute="trailing" secondItem="uhk-DC-YTI" secondAttribute="trailing" constant="8" id="KMx-R2-xNV"/>
+                                            <constraint firstItem="uhk-DC-YTI" firstAttribute="leading" secondItem="iTQ-m4-KuK" secondAttribute="leading" constant="8" id="cuP-tQ-hjs"/>
+                                            <constraint firstItem="m9w-Yz-KXV" firstAttribute="leading" secondItem="iTQ-m4-KuK" secondAttribute="leading" constant="8" id="niV-Ag-sLH"/>
+                                            <constraint firstItem="m9w-Yz-KXV" firstAttribute="top" secondItem="iTQ-m4-KuK" secondAttribute="top" constant="8" id="uMZ-Y5-2qU"/>
+                                            <constraint firstItem="uhk-DC-YTI" firstAttribute="top" secondItem="m9w-Yz-KXV" secondAttribute="bottom" constant="8" id="xyD-bT-soD"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="iTQ-m4-KuK" firstAttribute="bottom" secondItem="9TJ-Mw-yoW" secondAttribute="bottom" id="ADW-zs-3XO"/>
+                                    <constraint firstAttribute="trailing" secondItem="iTQ-m4-KuK" secondAttribute="trailing" id="Mif-jE-CCA"/>
+                                    <constraint firstAttribute="bottom" secondItem="iTQ-m4-KuK" secondAttribute="bottom" id="R47-s8-Lxu"/>
+                                    <constraint firstItem="iTQ-m4-KuK" firstAttribute="centerX" secondItem="ioE-6D-Df8" secondAttribute="centerX" id="UvM-yj-VJp"/>
+                                    <constraint firstItem="iTQ-m4-KuK" firstAttribute="top" secondItem="9TJ-Mw-yoW" secondAttribute="top" id="crV-Yu-09V"/>
+                                    <constraint firstItem="iTQ-m4-KuK" firstAttribute="leading" secondItem="9TJ-Mw-yoW" secondAttribute="leading" id="dt1-He-bmk"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="qWo-zh-aQA"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="9TJ-Mw-yoW"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ioE-6D-Df8" firstAttribute="centerX" secondItem="k86-00-tja" secondAttribute="centerX" id="AsF-Uz-hbo"/>
+                            <constraint firstItem="ioE-6D-Df8" firstAttribute="bottom" secondItem="zaz-en-AMw" secondAttribute="bottom" id="Tna-ev-E9M"/>
+                            <constraint firstItem="ioE-6D-Df8" firstAttribute="top" secondItem="zaz-en-AMw" secondAttribute="top" id="qmX-JL-0DO"/>
+                            <constraint firstItem="ioE-6D-Df8" firstAttribute="leading" secondItem="zaz-en-AMw" secondAttribute="leading" id="rvW-hd-QVh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zaz-en-AMw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="FAQ" image="InformationItem" id="kVM-yl-yWG">
@@ -41,28 +145,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sta-eB-0hG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="532" y="524"/>
+            <point key="canvasLocation" x="531.8840579710145" y="523.36956521739137"/>
         </scene>
         <!--Сегодня-->
         <scene sceneID="2yW-7C-UuF">
             <objects>
                 <viewController id="rgf-76-R1e" customClass="TodayViewController" customModule="HundredPushUps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IzF-2N-nDG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y7K-O2-WfN">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="440"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="440"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="440" id="82d-15-XrL"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pushUpCell" id="qjG-Di-vNb" customClass="PushUpTableViewCell" customModule="HundredPushUps" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qjG-Di-vNb" id="Ujg-bP-iQE">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -72,7 +176,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsH-6y-ZtW">
-                                <rect key="frame" x="167.66666666666666" y="448" width="79" height="30"/>
+                                <rect key="frame" x="120.5" y="448" width="79" height="30"/>
                                 <state key="normal" title="Заверишть"/>
                                 <connections>
                                     <action selector="trainingCompleted:" destination="rgf-76-R1e" eventType="touchUpInside" id="7dl-ca-f34"/>
@@ -106,17 +210,17 @@
             <objects>
                 <viewController storyboardIdentifier="TestViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HHW-Be-weR" customClass="TestViewController" customModule="HundredPushUps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ozQ-QO-Ktj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7M-ys-jUQ">
-                                <rect key="frame" x="182.66666666666666" y="20" width="49" height="29"/>
+                                <rect key="frame" x="135.5" y="20" width="49" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hx3-Nr-KcC">
-                                <rect key="frame" x="16" y="57" width="382" height="185"/>
+                                <rect key="frame" x="16" y="57" width="288" height="185"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="Z6X-Ib-orG"/>
@@ -127,19 +231,19 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGa-GM-Ig5">
-                                <rect key="frame" x="204.33333333333334" y="250" width="5.3333333333333428" height="29"/>
+                                <rect key="frame" x="157.5" y="250" width="5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="0.0" maxValue="99" translatesAutoresizingMaskIntoConstraints="NO" id="P6a-DR-Lwf">
-                                <rect key="frame" x="14" y="287" width="386" height="31"/>
+                                <rect key="frame" x="14" y="287" width="292" height="31"/>
                                 <connections>
                                     <action selector="sliderValueChanged:" destination="HHW-Be-weR" eventType="valueChanged" id="z8L-o0-9pa"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7k-EW-obK">
-                                <rect key="frame" x="160" y="325" width="94" height="30"/>
+                                <rect key="frame" x="113" y="325" width="94" height="30"/>
                                 <state key="normal" title="Подтвердить"/>
                                 <connections>
                                     <action selector="submitClicked:" destination="HHW-Be-weR" eventType="touchUpInside" id="BW6-Kf-1t7"/>
@@ -193,8 +297,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="HistoryItem" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="InformationItem" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="PushUpItem" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="HistoryItem" width="170.5" height="170.5"/>
+        <image name="InformationItem" width="170.5" height="170.5"/>
+        <image name="PushUpItem" width="170.5" height="170.5"/>
     </resources>
 </document>

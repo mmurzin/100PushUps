@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A5A3DB864E35210E0D7D4C3 /* Pods_HundredPushUps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87455CE3BD991BED7564897C /* Pods_HundredPushUps.framework */; };
+		975396A0238AA69200A27E81 /* TrainingHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753969F238AA69200A27E81 /* TrainingHistoryItem.swift */; };
 		97579E8D23867F7A00470CF7 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97579E8C23867F7A00470CF7 /* TodayViewController.swift */; };
 		97579E8F23867FC300470CF7 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97579E8E23867FC300470CF7 /* HistoryViewController.swift */; };
 		97579E9123867FF400470CF7 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97579E9023867FF400470CF7 /* InstructionsViewController.swift */; };
@@ -25,6 +26,8 @@
 		976002602389202700B95605 /* Date-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9760025F2389202700B95605 /* Date-Extension.swift */; };
 		976358422388FDD200DB0102 /* TrainingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976358412388FDD200DB0102 /* TrainingService.swift */; };
 		976358442389177000DB0102 /* TrainingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976358432389177000DB0102 /* TrainingItem.swift */; };
+		976D41F1238B09C900840402 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976D41F0238B09C900840402 /* HistoryViewModel.swift */; };
+		976D41F4238B0F1800840402 /* HistoryViewController-UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976D41F3238B0F1800840402 /* HistoryViewController-UITableViewDataSource.swift */; };
 		97AF2C7C2385DDBD00B4C364 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF2C7B2385DDBD00B4C364 /* AppDelegate.swift */; };
 		97AF2C7E2385DDBD00B4C364 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF2C7D2385DDBD00B4C364 /* SceneDelegate.swift */; };
 		97AF2C832385DDBD00B4C364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97AF2C812385DDBD00B4C364 /* Main.storyboard */; };
@@ -59,6 +62,7 @@
 		8994FAFE5F08631F8EAD95DE /* Pods-HundredPushUps-HundredPushUpsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HundredPushUps-HundredPushUpsUITests.release.xcconfig"; path = "Target Support Files/Pods-HundredPushUps-HundredPushUpsUITests/Pods-HundredPushUps-HundredPushUpsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9143213CD1B60E0657AAE635 /* Pods-HundredPushUpsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HundredPushUpsTests.release.xcconfig"; path = "Target Support Files/Pods-HundredPushUpsTests/Pods-HundredPushUpsTests.release.xcconfig"; sourceTree = "<group>"; };
 		964FA6DE0971C288ADF44FF4 /* Pods-HundredPushUps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HundredPushUps.release.xcconfig"; path = "Target Support Files/Pods-HundredPushUps/Pods-HundredPushUps.release.xcconfig"; sourceTree = "<group>"; };
+		9753969F238AA69200A27E81 /* TrainingHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingHistoryItem.swift; sourceTree = "<group>"; };
 		97579E8C23867F7A00470CF7 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		97579E8E23867FC300470CF7 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		97579E9023867FF400470CF7 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 		9760025F2389202700B95605 /* Date-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date-Extension.swift"; sourceTree = "<group>"; };
 		976358412388FDD200DB0102 /* TrainingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingService.swift; sourceTree = "<group>"; };
 		976358432389177000DB0102 /* TrainingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingItem.swift; sourceTree = "<group>"; };
+		976D41F0238B09C900840402 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		976D41F3238B0F1800840402 /* HistoryViewController-UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryViewController-UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		97AF2C782385DDBD00B4C364 /* HundredPushUps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HundredPushUps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97AF2C7B2385DDBD00B4C364 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97AF2C7D2385DDBD00B4C364 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +140,30 @@
 				9143213CD1B60E0657AAE635 /* Pods-HundredPushUpsTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9753969D238AA65E00A27E81 /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				975F99A623874DB300D626AA /* TestViewController.swift */,
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
+		9753969E238AA66F00A27E81 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				975A6D172387DDE60078AFCD /* TestResult.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		975396A1238AA7BF00A27E81 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9753969F238AA69200A27E81 /* TrainingHistoryItem.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		9759B7252389C67000736530 /* viewController */ = {
@@ -196,7 +226,9 @@
 		975F99A12387495A00D626AA /* history */ = {
 			isa = PBXGroup;
 			children = (
-				97579E8E23867FC300470CF7 /* HistoryViewController.swift */,
+				976D41F2238B0E5400840402 /* viewController */,
+				976D41EF238B09AE00840402 /* viewModel */,
+				975396A1238AA7BF00A27E81 /* model */,
 			);
 			path = history;
 			sourceTree = "<group>";
@@ -212,10 +244,27 @@
 		975F99A523874DA300D626AA /* test */ = {
 			isa = PBXGroup;
 			children = (
-				975F99A623874DB300D626AA /* TestViewController.swift */,
-				975A6D172387DDE60078AFCD /* TestResult.swift */,
+				9753969E238AA66F00A27E81 /* model */,
+				9753969D238AA65E00A27E81 /* viewController */,
 			);
 			path = test;
+			sourceTree = "<group>";
+		};
+		976D41EF238B09AE00840402 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				976D41F0238B09C900840402 /* HistoryViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		976D41F2238B0E5400840402 /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				97579E8E23867FC300470CF7 /* HistoryViewController.swift */,
+				976D41F3238B0F1800840402 /* HistoryViewController-UITableViewDataSource.swift */,
+			);
+			path = viewController;
 			sourceTree = "<group>";
 		};
 		97AF2C6F2385DDBD00B4C364 = {
@@ -543,8 +592,11 @@
 				975F99A423874BD600D626AA /* TabsViewController.swift in Sources */,
 				976358422388FDD200DB0102 /* TrainingService.swift in Sources */,
 				97579E8D23867F7A00470CF7 /* TodayViewController.swift in Sources */,
+				976D41F1238B09C900840402 /* HistoryViewModel.swift in Sources */,
 				97579E8F23867FC300470CF7 /* HistoryViewController.swift in Sources */,
 				975A6D142387D61B0078AFCD /* TestResultService.swift in Sources */,
+				976D41F4238B0F1800840402 /* HistoryViewController-UITableViewDataSource.swift in Sources */,
+				975396A0238AA69200A27E81 /* TrainingHistoryItem.swift in Sources */,
 				97579E9123867FF400470CF7 /* InstructionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

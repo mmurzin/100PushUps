@@ -41,6 +41,18 @@ class TestResultService {
         trainingService?.setInitPushUps(count)
     }
     
+    func removeTestResult() {
+        if let results = getTestResults() {
+            do {
+                try realm.write {
+                    realm.delete(results)
+                }
+            } catch {
+                print("TestResult write error")
+            }
+        }
+    }
+    
     private func getTestResults() -> TestResult?{
         do {
             return self.realm.object(ofType: TestResult.self, forPrimaryKey: TestResult.uniqueKey)

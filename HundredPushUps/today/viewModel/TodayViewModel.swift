@@ -35,6 +35,7 @@ class TodayViewModel {
     
     func saveProgress(_ exercises: [ExerciseItemModel])  {
         if let training = self.currentTraining {
+            trainingService.saveHistory(training: training, exercises:exercises)
             trainingService.updateProgress(training: training, exercises:exercises)
         }
     }
@@ -45,6 +46,10 @@ class TodayViewModel {
         } else {
             return false
         }
+    }
+    
+    func removeProgress() {
+        trainingService.removeProgress()
     }
     
     private func getExerciseItems(_ items: [Int]) -> [ExerciseItemModel] {

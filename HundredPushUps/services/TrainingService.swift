@@ -53,7 +53,7 @@ class TrainingService {
     
     func getCurrentTraining() -> TrainingItem? {
         do {
-            var realmProgress = self.realm.object(ofType: TrainingProgress.self, forPrimaryKey: TrainingProgress.uniqueKey)
+            let realmProgress = self.realm.object(ofType: TrainingProgress.self, forPrimaryKey: TrainingProgress.uniqueKey)
             if let index = realmProgress?.currentIndex {
                 self.trainingProgress = realmProgress
                 return getTrainingItem(byIndex: index)
@@ -84,11 +84,52 @@ class TrainingService {
         }
     }
     
+    func saveHistory(training: TrainingItem, exercises: [ExerciseItemModel]){
+        let progress = exercises.map{ "\($0.pushUpsCount):\($0.isCompleted.intValue)"  }
+        let progressValue = progress.joined(separator: ",")
+        let descriptionData = getTrainingDescription(byId: training.id)
+        let nowMs = Date().milliseconds
+        do {
+            try realm.write {
+                let item = TrainingHistoryItem()
+                item.progress = progressValue
+                item.timeMs = nowMs
+                item.trainingStage = descriptionData.0
+                item.trainingPosition = descriptionData.1
+                realm.add(item, update: .modified)
+            }
+        } catch {
+            print("TrainingHistoryItem write error")
+        }
+    }
+    
     func isStageCompleted(trainingId: Int) -> Bool {
         if let progress = self.trainingProgress {
             return progress.lastIndex == trainingId
         }
         return false
+    }
+    
+    func removeProgress() {
+        let service: TestResultService? = ServiceLocator.shared.getService()
+        service?.removeTestResult()
+    }
+    
+    private func getTrainingDescription(byId id: Int) -> (Int, Int) {
+        let keys = jsonData.groups.keys.sorted {
+            return jsonData.groups[$0]! < jsonData.groups[$1]!
+        }
+        var stage = 0
+        var trainingPosition = 0
+        for key in keys {
+            let stageIndex = jsonData.groups[key]! 
+            if(id >= stageIndex){
+                stage += 1
+                trainingPosition = id - stageIndex
+            }
+        }
+        trainingPosition += 1
+        return (stage, trainingPosition)
     }
     
     private func isLastTrainingInStage(_ lastIndex: Int, _ trainingId: Int) -> Bool{
@@ -139,6 +180,10 @@ class TrainingService {
         var groups: [String:Int] = [:]
         var items: [TrainingItem]
     }
-    
-    
+}
+
+extension Bool {
+    var intValue: Int {
+        return self ? 1 : 0
+    }
 }

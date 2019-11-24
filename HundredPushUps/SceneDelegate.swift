@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let testResultService: TestResultService = ServiceLocator.shared.getService() else { return }
         var viewController: UIViewController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        print("hasTestResult \(testResultService.hasTestResult())")
         if(testResultService.hasTestResult()){
             viewController = storyboard.instantiateViewController (withIdentifier: "TabsViewController")
         } else {
