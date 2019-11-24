@@ -18,6 +18,7 @@ class HistoryViewModel {
     init() {
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
     }
+    
     func loadTrainingsHistory() -> [TrainingHistoryItem] {
         let historyItems = try! Realm().objects(TrainingHistoryItem.self)
         return historyItems.sorted{ $0.timeMs > $1.timeMs}

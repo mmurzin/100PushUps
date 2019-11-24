@@ -63,15 +63,23 @@ class TrainingService {
         } catch {
             print("TrainingProgress realm error")
         }
-        return nil
+    }
+    
+    func getTrainingDate() -> Date {
+        return Date(milliseconds: self.trainingProgress!.startTs)
     }
     
     func updateProgress(training: TrainingItem, exercises: [ExerciseItemModel]){
+        
+        
+        
         if let progress = self.trainingProgress {
+            let dayToStart = Calendar.current.date(byAdding: .day, value: training.daysPause, to: Date(milliseconds: progress.startTs))!
             if !isLastTrainingInStage(progress.lastIndex, training.id) {
                 do {
                     try realm.write {
                         progress.currentIndex = progress.currentIndex + 1
+                        progress.startTs = dayToStart.milliseconds
                         realm.add(progress, update: .modified)
                     }
                 } catch {

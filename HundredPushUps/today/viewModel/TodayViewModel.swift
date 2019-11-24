@@ -13,6 +13,12 @@ class TodayViewModel {
     
     let trainingService:TrainingService
     private var currentTraining: TrainingItem?
+    var timeoutValue = 0
+    var trainingTime = ""
+    var isCanCompleteTraining = false
+    private let formatter = DateFormatter()
+    
+    
     
     init(service: TrainingService?) {
         if let s = service {
@@ -20,12 +26,20 @@ class TodayViewModel {
         } else {
             fatalError("TrainingService can't be nil")
         }
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
     }
     
     func loadTodayTraining() ->  [ExerciseItemModel] {
         let item = trainingService.getCurrentTraining()
         if let training = item {
+            let startDate = trainingService.getTrainingDate()
+            
             self.currentTraining = training
+            self.timeoutValue = training.setsPause
+            self.isCanCompleteTraining = Date().milliseconds > startDate.milliseconds
+            print("isCanCompleteTraining \(isCanCompleteTraining)")
+            self.trainingTime = formatter.string(from: startDate)
+            
             let exercises = self.getExerciseItems(training.sets)
             return exercises
         } else {

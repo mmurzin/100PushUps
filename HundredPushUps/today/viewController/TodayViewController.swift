@@ -10,6 +10,11 @@ import UIKit
 
 class TodayViewController: UIViewController, UITableViewDelegate  {
     
+    @IBOutlet weak var timeoutLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    
     lazy var viewModel = TodayViewModel(service: ServiceLocator.shared.getService())
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var heightConstrain: NSLayoutConstraint!
@@ -41,6 +46,11 @@ class TodayViewController: UIViewController, UITableViewDelegate  {
     
     private func loadTodayTraining() {
         self.exercises = viewModel.loadTodayTraining()
+        timeoutLabel.text = "Перерыв между подходами: \(viewModel.timeoutValue)"
+        timeLabel.text = "Время тренировки: \(viewModel.trainingTime)"
+        if(!viewModel.isCanCompleteTraining){
+            showWarningAlert()
+        }
         heightConstrain.constant = CGFloat(exercises.count * 50)
     }
     
@@ -49,5 +59,13 @@ class TodayViewController: UIViewController, UITableViewDelegate  {
         let viewController = storyboard.instantiateViewController (withIdentifier: "TestViewController")
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true, completion: nil)
+    }
+    
+    private func showWarningAlert(){
+        let alertController = UIAlertController(title: "100 PushUps", message:
+            "Вы пока не можете проходить эту тренировку. Перерыв очень важен!", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel))
+
+        self.present(alertController, animated: true, completion: nil)
     }
 }
