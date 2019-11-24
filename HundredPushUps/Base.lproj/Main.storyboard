@@ -67,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cw4-Rn-fGV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531.8840579710145" y="-178.53260869565219"/>
+            <point key="canvasLocation" x="531.8840579710145" y="-178.79464285714286"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="Ahh-qT-hQh">
@@ -95,13 +95,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="320" id="KZf-vo-98y"/>
                                                 </constraints>
-                                                <mutableString key="text">1) Лягте на живот
+                                                <string key="text">1) Лягте на живот
 2) Положите ладони плашмя на землю на высоте плеч, немного шире, чем ширина ваших плеч.
 3) Удерживайте тело в прямой позиции.
 4) Поднимите тело вверх, расправляя руки и удерживая тело в прямой позиции. Избегайте выгибания туловища назад.
 5) Тело должно опираться только на ладони и пальцы стоп, постоянно находясь в прямой позиции.
 6) Последующие отжимания выполняйте поднимая и опуская туловище путем сгибания и разгибания рук.
-7) Не ложитесь на землю между отжиманиями. От первого до последнего отжимания контактировать с полом должны только пальцы стоп и ладони.</mutableString>
+7) Не ложитесь на землю между отжиманиями. От первого до последнего отжимания контактировать с полом должны только пальцы стоп и ладони.</string>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

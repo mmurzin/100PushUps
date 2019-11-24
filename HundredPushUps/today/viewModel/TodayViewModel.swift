@@ -37,7 +37,6 @@ class TodayViewModel {
             self.currentTraining = training
             self.timeoutValue = training.setsPause
             self.isCanCompleteTraining = Date().milliseconds > startDate.milliseconds
-            print("isCanCompleteTraining \(isCanCompleteTraining)")
             self.trainingTime = formatter.string(from: startDate)
             
             let exercises = self.getExerciseItems(training.sets)

@@ -25,7 +25,22 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = false
+        loadTrainingsHistory()
+    }
+    
+    func loadTrainingsHistory() {
         self.historyItems = viewModel.loadTrainingsHistory()
+        if(self.historyItems.count == 0) {
+            showEmptyListAlert()
+        }
+    }
+    
+    private func showEmptyListAlert(){
+        let alertController = UIAlertController(title: "100 PushUps", message:
+            "У вас пока нет ни одной тренировки!", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel))
+
+        self.present(alertController, animated: true, completion: nil)
     }
 
 }

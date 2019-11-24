@@ -46,7 +46,7 @@ class TodayViewController: UIViewController, UITableViewDelegate  {
     
     private func loadTodayTraining() {
         self.exercises = viewModel.loadTodayTraining()
-        timeoutLabel.text = "Перерыв между подходами: \(viewModel.timeoutValue)"
+        timeoutLabel.text = "Перерыв между подходами: \(viewModel.timeoutValue) сек."
         timeLabel.text = "Время тренировки: \(viewModel.trainingTime)"
         if(!viewModel.isCanCompleteTraining){
             showWarningAlert()

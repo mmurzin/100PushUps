@@ -14,8 +14,15 @@ class TabsViewController: UITabBarController {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if item.title == "История" {
+            let viewController = viewControllers?[1]
+            if  viewController is HistoryViewController {
+                (viewController as! HistoryViewController).loadTrainingsHistory()
+            }
+        }
     }
+    
+
 
 }
