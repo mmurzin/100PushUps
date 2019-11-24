@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class TrainingServices {
+class TrainingService {
     
     private let jsonData: TrainingsJson
     private let realm = try! Realm()
@@ -48,6 +48,23 @@ class TrainingServices {
     
     func getTrainingItem(byIndex index: Int) -> TrainingItem {
         return jsonData.items[index]
+    }
+    
+    func getCurrentTraining() -> TrainingItem? {
+        do {
+            var realmProgress = self.realm.object(ofType: TrainingProgress.self, forPrimaryKey: TrainingProgress.uniqueKey)
+            if(realmProgress == nil){
+                realmProgress = TrainingProgress()
+            }
+            if let index = realmProgress?.currentIndex {
+                return getTrainingItem(byIndex: index)
+            } else {
+                return nil
+            }
+        } catch {
+            print("TrainingProgress realm error")
+        }
+        return nil
     }
     
     private func initUserProgress(_ progress: Progress){

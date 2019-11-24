@@ -37,7 +37,7 @@ class TestResultService {
             }
         }
         
-        let trainingService: TrainingServices? = ServiceLocator.shared.getService()
+        let trainingService: TrainingService? = ServiceLocator.shared.getService()
         trainingService?.setInitPushUps(count)
     }
     

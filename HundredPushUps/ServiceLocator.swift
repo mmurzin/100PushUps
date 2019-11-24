@@ -18,7 +18,7 @@ final class ServiceLocator: ServiceLocating {
     
     public static func initializeServices() {
         shared.addService(service: TestResultService())
-        shared.addService(service: TrainingServices())
+        shared.addService(service: TrainingService())
     }
     
     private lazy var services: Dictionary<String, Any> = [:]
