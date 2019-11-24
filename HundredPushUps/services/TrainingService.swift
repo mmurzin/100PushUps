@@ -16,6 +16,7 @@ class TrainingService {
     private let realm = try! Realm()
     private let maxTrainingIndex: Int
     typealias Progress = (currentIndex: Int, lastIndex: Int, startTs: Int64)
+    private var trainingProgress: TrainingProgress?
     
     init() {
         guard let asset = NSDataAsset(name: "Trainings") else {
@@ -53,10 +54,8 @@ class TrainingService {
     func getCurrentTraining() -> TrainingItem? {
         do {
             var realmProgress = self.realm.object(ofType: TrainingProgress.self, forPrimaryKey: TrainingProgress.uniqueKey)
-            if(realmProgress == nil){
-                realmProgress = TrainingProgress()
-            }
             if let index = realmProgress?.currentIndex {
+                self.trainingProgress = realmProgress
                 return getTrainingItem(byIndex: index)
             } else {
                 return nil
@@ -67,19 +66,48 @@ class TrainingService {
         return nil
     }
     
+    func updateProgress(training: TrainingItem, exercises: [ExerciseItemModel]){
+        if let progress = self.trainingProgress {
+            if !isLastTrainingInStage(progress.lastIndex, training.id) {
+                do {
+                    try realm.write {
+                        progress.currentIndex = progress.currentIndex + 1
+                        realm.add(progress, update: .modified)
+                    }
+                } catch {
+                    print("TrainingProgress write error")
+                }
+                
+            } else {
+                
+            }
+        }
+    }
+    
+    func isStageCompleted(trainingId: Int) -> Bool {
+        if let progress = self.trainingProgress {
+            return progress.lastIndex == trainingId
+        }
+        return false
+    }
+    
+    private func isLastTrainingInStage(_ lastIndex: Int, _ trainingId: Int) -> Bool{
+        return lastIndex == trainingId
+    }
+    
     private func initUserProgress(_ progress: Progress){
         do {
             var realmProgress = self.realm.object(ofType: TrainingProgress.self, forPrimaryKey: TrainingProgress.uniqueKey)
             if(realmProgress == nil){
                 realmProgress = TrainingProgress()
             }
-            realmProgress?.currentIndex = progress.currentIndex
-            realmProgress?.lastIndex = progress.lastIndex
-            realmProgress?.startTs = progress.startTs
             
             if let element = realmProgress {
                 do {
                     try realm.write {
+                        realmProgress?.currentIndex = progress.currentIndex
+                        realmProgress?.lastIndex = progress.lastIndex
+                        realmProgress?.startTs = progress.startTs
                         realm.add(element, update: .modified)
                     }
                 } catch {

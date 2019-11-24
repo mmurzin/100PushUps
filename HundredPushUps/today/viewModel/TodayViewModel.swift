@@ -10,7 +10,9 @@ import Foundation
 
 class TodayViewModel {
     
+    
     let trainingService:TrainingService
+    private var currentTraining: TrainingItem?
     
     init(service: TrainingService?) {
         if let s = service {
@@ -23,10 +25,25 @@ class TodayViewModel {
     func loadTodayTraining() ->  [ExerciseItemModel] {
         let item = trainingService.getCurrentTraining()
         if let training = item {
+            self.currentTraining = training
             let exercises = self.getExerciseItems(training.sets)
             return exercises
         } else {
             fatalError("TodayViewModel: currentTraining in nil")
+        }
+    }
+    
+    func saveProgress(_ exercises: [ExerciseItemModel])  {
+        if let training = self.currentTraining {
+            trainingService.updateProgress(training: training, exercises:exercises)
+        }
+    }
+    
+    func isStageCompleted() -> Bool {
+        if let training = self.currentTraining {
+            return trainingService.isStageCompleted(trainingId: training.id)
+        } else {
+            return false
         }
     }
     

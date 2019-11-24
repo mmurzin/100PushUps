@@ -25,11 +25,11 @@ class TestResultService {
         if(result == nil) {
             result = TestResult()
         }
-        result?.pushUpsCount = count
-
+        
         if let element = result {
             do {
                 try realm.write {
+                    result?.pushUpsCount = count
                     realm.add(element, update: .modified)
                 }
             } catch {

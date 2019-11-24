@@ -15,9 +15,11 @@ class TodayViewController: UIViewController, UITableViewDelegate  {
     @IBOutlet weak var heightConstrain: NSLayoutConstraint!
     
     @IBAction func trainingCompleted(_ sender: Any) {
-        print("trainingCompleted")
-        exercises.forEach{
-            print("isCompleted \($0.isCompleted)")
+        viewModel.saveProgress(self.exercises)
+        if viewModel.isStageCompleted() {
+            openTestDisplay()
+        } else {
+            loadTodayTraining()
         }
     }
     var exercises: [ExerciseItemModel] = [] {
@@ -33,8 +35,18 @@ class TodayViewController: UIViewController, UITableViewDelegate  {
         tableView.register(UINib(nibName: "PushUpTableViewCell", bundle: nil), forCellReuseIdentifier: "pushUpCell")
         tableView.isScrollEnabled = false
         tableView.allowsSelection = false
-        
+        loadTodayTraining()
+    }
+    
+    private func loadTodayTraining() {
         self.exercises = viewModel.loadTodayTraining()
         heightConstrain.constant = CGFloat(exercises.count * 50)
+    }
+    
+    private func openTestDisplay() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController (withIdentifier: "TestViewController")
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true, completion: nil)
     }
 }
